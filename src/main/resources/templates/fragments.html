@@ -27,5 +27,18 @@
         </div>
     </div>
 
+    <table th:fragment="list-jobs" th:if="${jobs}">
+        <tr>
+            <th>Position Type</th>
+            <th>Name</th>
+            <th>Employer</th>
+            <th>Location</th>
+            <th>Core Competency</th>
+        </tr>
+        <tr th:each="result : ${jobs}">
+            <td th:each="item : ${result}" th:text="${item.value}" />
+        </tr>
+    </table>
+
 </body>
 </html>
