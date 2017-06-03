@@ -27,18 +27,21 @@
         </div>
     </div>
 
-    <table th:fragment="list-jobs" th:if="${jobs}">
-        <tr>
-            <th>Position Type</th>
-            <th>Name</th>
-            <th>Employer</th>
-            <th>Location</th>
-            <th>Core Competency</th>
-        </tr>
-        <tr th:each="result : ${jobs}">
-            <td th:each="item : ${result}" th:text="${item.value}" />
-        </tr>
-    </table>
+    <div th:fragment="list-jobs" th:if="${jobs}">
+        <h2 th:text="|${jobs.size()} job(s)|"></h2>
+        <table>
+            <tr>
+                <th>Position Type</th>
+                <th>Name</th>
+                <th>Employer</th>
+                <th>Location</th>
+                <th>Core Competency</th>
+            </tr>
+            <tr th:each="result : ${jobs}">
+                <td th:each="item : ${result}" th:text="${item.value}" />
+            </tr>
+        </table>
+    </div>
 
 </body>
 </html>
